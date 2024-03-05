@@ -10,12 +10,14 @@
     </tr>
   </thead>
   <tbody>
+  <% z = 1 %>
   <% @tasks.each do |task| %>
+  <%= z +=1 %>
   <tr>
-    <th scope="row"></th>
+    <th scope="row"><%= z %></th>
     <td><%= link_to task.title, task_path(task.id) %></td>
-    <td></td>
-    <td></td>
+    <td><%= task.details %></td>
+    <td><%= task.completed %></td>
   </tr>
   <% end %>
   </tbody>
